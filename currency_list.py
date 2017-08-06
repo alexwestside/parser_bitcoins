@@ -3,7 +3,6 @@
 
 from init import *
 
-
 def get_currency_list():
     for coin in coins_list:
         get_api_currency = api_currency.replace(re.findall(r'(?<=(\=))\w+(?=(\&))', api_currency), coin)
