@@ -53,8 +53,8 @@ def get_data_coins():
     csvwriter = csv.writer(fp, delimiter=',')
     csvwriter.writerow(csv_colums)
     for coin in currency_list:
-        if coin == 'NXT':
-            print (1)
+        # if coin == 'NXT':
+        #     print (1)
         currencys = currency_list.get(coin)
         for currecy in currencys:
             re_find_coin = re.findall(r'(?<=\=)\w+(?=\&)', api_data)

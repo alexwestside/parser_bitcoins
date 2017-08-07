@@ -2,11 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="82e02e82-c4e6-4a46-8e41-df783be50b9d" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/csvfile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/csvfile.cv" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/datacoins.csv" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/get_data_coins.py" afterPath="$PROJECT_DIR$/get_data_coins.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/parser_bitcoins.py" afterPath="$PROJECT_DIR$/parser_bitcoins.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -70,11 +65,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="parser_bitcoins.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="parser_bitcoins.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/parser_bitcoins.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+            <state relative-caret-position="465">
+              <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
               <folding>
                 <element signature="e#0#15#0" expanded="true" />
               </folding>
@@ -82,10 +77,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="datacoins.csv" pinned="false" current-in-tab="false">
+      <file leaf-file-name="datacoins.csv" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/datacoins.csv">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
+            <state relative-caret-position="-255">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
@@ -510,11 +505,11 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/parser_bitcoins.py</url>
-          <line>56</line>
-          <option name="timeStamp" value="61" />
+          <line>30</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="62" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -678,16 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/currency_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
-          <folding>
-            <element signature="e#1#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/csv.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="534">
@@ -748,21 +733,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/datacoins.csv">
+    <entry file="file://$PROJECT_DIR$/currency_list.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+        <state relative-caret-position="495">
+          <caret line="33" column="19" lean-forward="false" selection-start-line="33" selection-start-column="19" selection-end-line="33" selection-end-column="19" />
+          <folding>
+            <element signature="e#1#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/parser_bitcoins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+        <state relative-caret-position="465">
+          <caret line="31" column="0" lean-forward="false" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/datacoins.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-255">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
