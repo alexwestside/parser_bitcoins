@@ -1,13 +1,34 @@
 
+import requests
+import json
+import init
+import re
+
 # api = 'https://min-api.cryptocompare.com/data/top/pairs?fsym=XMR&limit=1000'
 
-from init import *
+{"Response":"Success","Data":[{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"JPY","volume24h":96417.83765111184,"volume24hTo":35315048195.60753},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"USD","volume24h":55384.77870827107,"volume24hTo":179680243.0670938},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"CNY","volume24h":32521.133964169992,"volume24hTo":709149812.9874275},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"KRW","volume24h":21951.251362529998,"volume24hTo":78796103669.85524},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"EUR","volume24h":10996.871177570005,"volume24hTo":30015570.85114391},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"PLN","volume24h":768.3372410799999,"volume24hTo":8675379.965301558},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"GBP","volume24h":745.6838625699999,"volume24hTo":1866364.3803940993},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"AUD","volume24h":333.95900822,"volume24hTo":1380180.5955804945},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"CAD","volume24h":304.35086809,"volume24hTo":1282664.122245647},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"RUB","volume24h":270.75627181000004,"volume24hTo":50748305.76590044},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"ZAR","volume24h":227.14483504,"volume24hTo":10131438.69487139},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"MYR","volume24h":166.67773099999997,"volume24hTo":2289975.289236093},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"MXN","volume24h":138.69402028999994,"volume24hTo":7701531.215700242},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"BRL","volume24h":125.10655591999998,"volume24hTo":1296305.6404955522},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"RUR","volume24h":76.07444398000001,"volume24hTo":14503658.303153437},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"NGN","volume24h":63.051164400000005,"volume24hTo":71103213.84795967},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"HKD","volume24h":53.078444389999994,"volume24hTo":1344401.5739845526},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"INR","volume24h":38.50953704,"volume24hTo":7680944.558656948},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"UAH","volume24h":37.93870996,"volume24hTo":2959871.7066320907},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"SGD","volume24h":37.36341214,"volume24hTo":165636.4397268366},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"NOK","volume24h":21.09065478,"volume24hTo":547192.3895105588},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"NZD","volume24h":17.80723241,"volume24hTo":78643.7501042121},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"ILS","volume24h":16.148594919999997,"volume24hTo":179653.6748748274},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"GOLD","volume24h":15.204052544689999,"volume24hTo":1219.32},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"USDT","volume24h":14.323749090000002,"volume24hTo":46548.22858575},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"SEK","volume24h":14.293200769999999,"volume24hTo":381340.7508072956},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"THB","volume24h":11.416520350000003,"volume24hTo":1205884.4300883482},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"PKR","volume24h":10.717957190000002,"volume24hTo":3399476.992259902},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"IDR","volume24h":10.606824550000002,"volume24hTo":450356570.83213496},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"VEF","volume24h":10.38867747,"volume24hTo":481496380.7215848},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"PHP","volume24h":9.01191516,"volume24hTo":1453367.8478860233},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"AED","volume24h":7.69599367,"volume24hTo":95499.9500448737},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"RON","volume24h":4.735149039999999,"volume24hTo":57586.429940374386},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"KES","volume24h":4.37296133,"volume24hTo":1456502.72877399},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"NZDT","volume24h":3.87417837,"volume24hTo":16726.70299628},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"COP","volume24h":3.8420165400000004,"volume24hTo":34900923.83131231},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"BITCNY","volume24h":2.45078417,"volume24hTo":55335.85764725},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"PEN","volume24h":2.2851828500000004,"volume24hTo":24658.989935672304},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"CHF","volume24h":2.12169286,"volume24hTo":6799.4011810073},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"SAR","volume24h":1.5964325099999999,"volume24hTo":17166.1601277184},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"MAD","volume24h":1.43771563,"volume24hTo":47100.0002306464},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"TRY","volume24h":1.43730836,"volume24hTo":16089.049737420199},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"HRK","volume24h":1.39211414,"volume24hTo":29367.9998630351},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"TWD","volume24h":1.28849859,"volume24hTo":128993.0004348751},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"CLP","volume24h":0.8016231300000002,"volume24hTo":1741959.3193065203},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"KZT","volume24h":0.65554724,"volume24hTo":695737.149830093},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"WEUR","volume24h":0.6348411299999998,"volume24hTo":1830.7413928729525},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"UGX","volume24h":0.44547803,"volume24hTo":5363999.840752842},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"HUF","volume24h":0.44301013999999994,"volume24hTo":376202.9192863125},{"exchange":"CCCAGG","fromSymbol":"BTC","toSymbol":"CZK","volume24h":0.39651416,"volume24hTo":27681.329979366303}]}
+
+api_currency = 'https://min-api.cryptocompare.com/data/top/pairs?fsym=XMR&limit=1000'
+
+coins_list = ['BTC']
+
+currency_list = {}
 
 def get_currency_list():
     for coin in coins_list:
-        get_api_currency = api_currency.replace(re.findall(r'(?<=(\=))\w+(?=(\&))', api_currency), coin)
+        re_find = re.findall(r'(?<=\=)\w+(?=\&)', api_currency)
+        get_api_currency = api_currency.replace(re_find[0], str(coin) )
         request = requests.get(get_api_currency)
         data_currency = request.content
         data_currency = json.loads(data_currency)
         data_currency = data_currency.get('Data')
-        print(data_currency)
+        for tok in data_currency:
+            if coin not in currency_list:
+                currency_list[coin] = []
+                currency_list.get(coin).append(str(tok.get('toSymbol')))
+            else:
+                currency_list.get(coin).append(str(tok.get('toSymbol')))
+        print(currency_list)
+
+
+get_currency_list()
