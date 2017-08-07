@@ -31,7 +31,7 @@ def get_coins_list():
 def get_currency_list():
     for coin in coins_list:
         re_find = re.findall(r'(?<=\=)\w+(?=\&)', api_currency)
-        get_api_currency = api_currency.replace(re_find[0], str(coin) )
+        get_api_currency = api_currency.replace(re_find[0], str(coin))
         request = requests.get(get_api_currency)
         data_currency = request.content
         data_currency = json.loads(data_currency)
@@ -42,11 +42,15 @@ def get_currency_list():
                 currency_list.get(coin).append(str(tok.get('toSymbol')))
             else:
                 currency_list.get(coin).append(str(tok.get('toSymbol')))
-        # print(currency_list)
+    print(currency_list)
     return
 
 def get_data_coins():
-
+    for dict in currency_list:
+        coin = dict.getkey()
+        currencys = dict.get(coin)
+        for currecy in currencys:
+            request = requests.get()
     pass
 
 get_coins_list()
