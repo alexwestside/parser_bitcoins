@@ -15,8 +15,8 @@ api_coins = 'https://www.cryptocompare.com/api/data/coinlist/'
 currency_list = {}
 api_currency = 'https://min-api.cryptocompare.com/data/top/pairs?fsym=XMR&limit=1000'
 
-api_data = 'https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=BTC&tsym=USD'
 data_coins = []
+api_data = 'https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=BTC&tsym=USD'
 
 csv_colums = ['Coin name', 'Market', 'Currency', 'Price', 'Open 24H', 'Range 24H']
 
@@ -28,7 +28,6 @@ def get_coins_list():
     for coin in data_coins:
         if int(data_coins[coin].get('SortOrder')) in range(1, top):
             coins_list.append((data_coins[coin].get('Name')))
-    # print(coins_list)
     return
 
 def get_currency_list():
@@ -45,7 +44,6 @@ def get_currency_list():
                 currency_list.get(coin).append(str(tok.get('toSymbol')))
             else:
                 currency_list.get(coin).append(str(tok.get('toSymbol')))
-    # print(currency_list)
     return
 
 def get_data_coins():
@@ -53,8 +51,6 @@ def get_data_coins():
     csvwriter = csv.writer(fp, delimiter=',')
     csvwriter.writerow(csv_colums)
     for coin in currency_list:
-        # if coin == 'NXT':
-        #     print (1)
         currencys = currency_list.get(coin)
         for currecy in currencys:
             re_find_coin = re.findall(r'(?<=\=)\w+(?=\&)', api_data)
@@ -72,10 +68,9 @@ def get_data_coins():
                     datacoins.append(data.get('FROMSYMBOL'))
                     datacoins.append(data.get('MARKET'))
                     datacoins.append(data.get('TOSYMBOL'))
-                    datacoins.append(data.get('PRICE'))
-                    datacoins.append(data.get('OPEN24HOUR'))
-                    datacoins.append(data.get('HIGH24HOUR'))
-                    datacoins.append(data.get('LOW24HOUR'))
+                    datacoins.append(str(Decimal(float(data.get('PRICE'))))[:10])
+                    datacoins.append(str(Decimal(float(data.get('OPEN24HOUR'))))[:10])
+                    datacoins.append(str(Decimal(float(data.get('HIGH24HOUR')) - float(data.get('LOW24HOUR'))))[:10])
                     csvwriter.writerow(datacoins)
     fp.close()
     return
