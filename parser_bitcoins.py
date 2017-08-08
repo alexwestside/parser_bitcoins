@@ -4,22 +4,20 @@ import re
 import csv
 from decimal import Decimal
 
-url1 = 'https://www.cryptocompare.com/coins/btc/markets/USD'
-url2 = 'https://www.cryptocompare.com/coins/eth/markets/BTC'
-
-top = 20
+top = 20 # Count of top coins that need to collect in dataset
 
 coins_list = []
-api_coins = 'https://www.cryptocompare.com/api/data/coinlist/'
+api_coins = 'https://www.cryptocompare.com/api/data/coinlist/' # Exemple of api request that given data of all coins wich we will range by parametr SortOrder
 
 currency_list = {}
-api_currency = 'https://min-api.cryptocompare.com/data/top/pairs?fsym=XMR&limit=1000'
+api_currency = 'https://min-api.cryptocompare.com/data/top/pairs?fsym=XMR&limit=1000' # Exemple of api request that given data of a coin-currency
 
 data_coins = []
-api_data = 'https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=BTC&tsym=USD'
+api_data = 'https://www.cryptocompare.com/api/data/coinsnapshot/?fsym=BTC&tsym=USD' # Exemple of api reauest that given data of a coin-market-currency
 
-csv_colums = ['Coin name', 'Market', 'Currency', 'Price', 'Open 24H', 'Range 24H']
+csv_colums = ['Coin name', 'Market', 'Currency', 'Price', 'Open 24H', 'Range 24H'] # Struct of CSV file
 
+# Func making a list of a top20 coins
 def get_coins_list():
     request = requests.get(api_coins)
     data_coins = request.content
@@ -30,6 +28,7 @@ def get_coins_list():
             coins_list.append((data_coins[coin].get('Name')))
     return
 
+# Func making a lists all curencys in connect by each coin
 def get_currency_list():
     for coin in coins_list:
         re_find = re.findall(r'(?<=\=)\w+(?=\&)', api_currency)
@@ -46,6 +45,7 @@ def get_currency_list():
                 currency_list.get(coin).append(str(tok.get('toSymbol')))
     return
 
+# Func making a dataset fo all coin in coins_list and write it in file
 def get_data_coins():
     fp = open('datacoins.csv', 'wb')
     csvwriter = csv.writer(fp, delimiter=',')
@@ -75,6 +75,11 @@ def get_data_coins():
     fp.close()
     return
 
-get_coins_list()
-get_currency_list()
-get_data_coins()
+# Main func produce dataset named - "datacoins.csv"
+def main():
+    get_coins_list()
+    get_currency_list()
+    get_data_coins()
+
+if __name__ == "__main__":
+    main()
